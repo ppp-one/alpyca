@@ -359,12 +359,12 @@ class Device:
 # HTTP/JSON Communications
 # ========================
 
-    def _get(self, attribute: str, tmo=5.0, **data) -> str:
+    def _get(self, attribute: str, tmo=60.0, **data) -> str:
         """Send an HTTP GET request to an Alpaca server and check response for errors.
 
         Args:
             attribute (str): Attribute to get from server.
-            tmo (optional) Timeout for HTTP (default = 5 sec)
+            tmo (optional) Timeout for HTTP (default = 60 sec)
             **data: Data to send with request.
                   
         """
@@ -389,12 +389,12 @@ class Device:
         self.__check_error(response)
         return response.json()["Value"]
 
-    def _put(self, attribute: str, tmo=5.0, **data) -> str:
+    def _put(self, attribute: str, tmo=60.0, **data) -> str:
         """Send an HTTP PUT request to an Alpaca server and check response for errors.
 
         Args:
             attribute (str): Attribute to put to server.
-            tmo (optional) Timeout for HTTP (default = 5 sec)
+            tmo (optional) Timeout for HTTP (default = 60 sec)
             **data: Data to send with request.
         
         """
